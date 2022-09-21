@@ -1,5 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
+import Character from './character'
 
 
 const Characters =() => {
@@ -9,7 +10,7 @@ const Characters =() => {
       return response.json()
     }
 
-    const { isLoading, isFetching, error, data, status} = useQuery('cheracters', fetchCharacter)
+    const { isLoading, isFetching, error, data, status} = useQuery('characters', fetchCharacter)
 
     if(isLoading){
       return <div>Loading...</div>
@@ -20,9 +21,9 @@ const Characters =() => {
     }
 
   return (
-    <div>
+    <div className='characters'>
         {data.results.map((item, index) => {
-           return <p key={index}>{item.name}</p>
+           return <Character character={item} />
         })}
     </div>
   )
