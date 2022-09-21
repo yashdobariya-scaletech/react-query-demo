@@ -1,10 +1,10 @@
-import './App.css';
-import Characters from './components/characters';
+import "./App.css";
+import Characters from "./components/characters";
 
 function App() {
   return (
     <div className="App">
-      <div className='container'>
+      <div className="container">
         <h1>Rick and Morty</h1>
         <Characters />
       </div>
